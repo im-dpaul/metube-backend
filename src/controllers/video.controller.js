@@ -22,7 +22,7 @@ const publishVideo = asyncHandler(async (req, res) => {
 
   video = await uploadOnCloudinary(video[0].path);
   thumbnail = await uploadOnCloudinary(thumbnail[0].path);
-  if (!video.url || !thumbnail.url) {
+  if (!video?.url || !thumbnail?.url) {
     throw new ApiError(500, "Something went wrong while uploading video");
   }
 
